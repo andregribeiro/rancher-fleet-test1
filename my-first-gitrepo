@@ -1,0 +1,13 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: httpbin
+  namespace: fleet-local
+spec:
+  branch: master
+  # If you require authentication add next the secret name
+  # clientSecretName: gitrepo-auth-https
+  insecureSkipTLSVerify: true
+  repo: https://github.com/andregribeiro/rancher-fleet-test1.git
+  targets:
+  - clusterSelector: {}
